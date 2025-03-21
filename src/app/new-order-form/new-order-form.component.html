@@ -1,0 +1,129 @@
+<div class="form-container">
+  <div class="title-container">
+    <h2 mat-dialog-title>Customer AHPOP - New Order</h2>
+  </div>
+
+  <form [formGroup]="orderForm" (ngSubmit)="onSubmit()" *ngIf="!orderCreated">
+    <p class="required-message">Todos los campos marcados con  * son obligatorios.</p>
+
+    <div class="form-row">
+      <div class="form-col">
+        <div class="form-group">
+          <label for="empId">Employee *:</label>
+          <input type="number" id="empId" formControlName="empId" placeholder="Enter Employee ID">
+          <div *ngIf="orderForm.get('empId')?.invalid && (orderForm.get('empId')?.dirty || orderForm.get('empId')?.touched)" class="error-message">
+            <p *ngIf="orderForm.get('empId')?.errors?.['required']">Employee ID is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="shipperId">Shipper *:</label>
+          <input type="number" id="shipperId" formControlName="shipperId" placeholder="Enter Shipper ID">
+        <div *ngIf="orderForm.get('shipperId')?.invalid && (orderForm.get('shipperId')?.dirty || orderForm.get('shipperId')?.touched)" class="error-message">
+          <p *ngIf="orderForm.get('shipperId')?.errors?.['required']">Shipper ID is required.</p>
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="shipName">Ship Name *:</label>
+          <input type="text" id="shipName" formControlName="shipName" placeholder="Enter Ship Name">
+          <div *ngIf="orderForm.get('shipName')?.invalid && (orderForm.get('shipName')?.dirty || orderForm.get('shipName')?.touched)" class="error-message">
+            <p *ngIf="orderForm.get('shipName')?.errors?.['required']">Ship Name is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="shipAddress">Ship Address *:</label>
+          <input type="text" id="shipAddress" formControlName="shipAddress" placeholder="Enter Ship Address">
+          <div *ngIf="orderForm.get('shipAddress')?.invalid && (orderForm.get('shipAddress')?.dirty || orderForm.get('shipAddress')?.touched)" class="error-message">
+            <p *ngIf="orderForm.get('shipAddress')?.errors?.['required']">Ship Address is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="shipCity">Ship City *:</label>
+          <input type="text" id="shipCity" formControlName="shipCity" placeholder="Enter Ship City">
+          <div *ngIf="orderForm.get('shipCity')?.invalid && (orderForm.get('shipCity')?.dirty || orderForm.get('shipCity')?.touched)" class="error-message">
+            <p *ngIf="orderForm.get('shipCity')?.errors?.['required']">Ship City is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="shipCountry">Ship Country *:</label>
+          <input type="text" id="shipCountry" formControlName="shipCountry" placeholder="Enter Ship Country">
+          <div *ngIf="orderForm.get('shipCountry')?.invalid && (orderForm.get('shipCountry')?.dirty || orderForm.get('shipCountry')?.touched)" class="error-message">
+            <p *ngIf="orderForm.get('shipCountry')?.errors?.['required']">Ship Country is required.</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-col">
+        <div class="form-group">
+          <label for="orderDate">Order Date *:</label>
+          <input type="datetime-local" id="orderDate" formControlName="orderDate">
+            <div *ngIf="orderForm.get('orderDate')?.invalid && (orderForm.get('orderDate')?.dirty || orderForm.get('orderDate')?.touched)" class="error-message">
+              <p *ngIf="orderForm.get('orderDate')?.errors?.['required']">Order Date is required.</p>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="requiredDate">Required Date *:</label>
+          <input type="datetime-local" id="requiredDate" formControlName="requiredDate">
+          <div *ngIf="orderForm.get('requiredDate')?.invalid && (orderForm.get('requiredDate')?.dirty || orderForm.get('requiredDate')?.touched)" class="error-message">
+            <p *ngIf="orderForm.get('requiredDate')?.errors?.['required']">Required Date is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="shippedDate">Shipped Date:</label>
+          <input type="datetime-local" id="shippedDate" formControlName="shippedDate">
+          <div *ngIf="orderForm.get('shippedDate')?.invalid && (orderForm.get('shippedDate')?.dirty || orderForm.get('shippedDate')?.touched)" class="error-message">
+          <p *ngIf="orderForm.get('shippedDate')?.errors?.['required']">Shipped Date is required.</p>
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="freight">Freight *:</label>
+          <input type="number" id="freight" formControlName="freight" placeholder="Enter Freight">
+          <div *ngIf="orderForm.get('freight')?.invalid && (orderForm.get('freight')?.dirty || orderForm.get('freight')?.touched)" class="error-message">
+            <p *ngIf="orderForm.get('freight')?.errors?.['required']">Freight is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="custId">Customer ID *:</label>
+          <input type="number" id="custId" formControlName="custId" placeholder="Enter Customer ID">
+          <div *ngIf="orderForm.get('custId')?.invalid && (orderForm.get('custId')?.dirty || orderForm.get('custId')?.touched)" class="error-message">
+            <p *ngIf="orderForm.get('custId')?.errors?.['required']">Customer ID is required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="productId">Product ID *:</label>
+      <input type="number" id="productId" formControlName="productId" placeholder="Enter Product ID">
+        <div *ngIf="orderForm.get('productId')?.invalid && (orderForm.get('productId')?.dirty || orderForm.get('productId')?.touched)" class="error-message">
+          <p *ngIf="orderForm.get('productId')?.errors?.['required']">Product ID is required.</p>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="unitPrice">Unit Price *:</label>
+      <input type="number" id="unitPrice" formControlName="unitPrice" placeholder="Enter Unit Price">
+        <div *ngIf="orderForm.get('unitPrice')?.invalid && (orderForm.get('unitPrice')?.dirty || orderForm.get('unitPrice')?.touched)" class="error-message">
+          <p *ngIf="orderForm.get('unitPrice')?.errors?.['required']">Unit Price is required.</p>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="qty">Quantity *:</label>
+      <input type="number" id="qty" formControlName="qty" placeholder="Enter Quantity">
+      <div *ngIf="orderForm.get('qty')?.invalid && (orderForm.get('qty')?.dirty || orderForm.get('qty')?.touched)" class="error-message">
+        <p *ngIf="orderForm.get('qty')?.errors?.['required']">Quantity is required.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="discount">Discount *:</label>
+      <input type="number" id="discount" formControlName="discount" placeholder="Enter Discount">
+      <div *ngIf="orderForm.get('discount')?.invalid && (orderForm.get('discount')?.dirty || orderForm.get('discount')?.touched)" class="error-message">
+        <p *ngIf="orderForm.get('discount')?.errors?.['required']">Discount is required.</p>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-button">Create Order</button>
+    <button type="button" class="close-button" (click)="closeModal()">Close</button>
+  </form>
+
+  <div *ngIf="orderCreated" class="success-message" (click)="resetForm()">
+    <p>Order created successfully! Order ID: {{ orderId }}</p>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.modal-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+  }
+
+  .modal-title {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  } 
+
+  .close-button-red {
+    color: red;
+  }

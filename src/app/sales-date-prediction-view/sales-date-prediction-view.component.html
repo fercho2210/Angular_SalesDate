@@ -1,0 +1,48 @@
+<div class="title-container">
+    <h2>Sales Date Prediction App</h2>
+  </div>
+  <br><br>
+
+  <div class="content-box">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <p class="customers-title">Customers</p>
+    <mat-form-field class="right-align search-field-wide">
+      <input matInput (keyup)="applyFilter()" placeholder="Customer Name" [(ngModel)]="search">
+      <mat-icon matSuffix>
+        <img src="assets/images/lupa.jpg" alt="" style="width: 20px; height: 20px;">
+      </mat-icon>
+    </mat-form-field>
+  </div>
+
+  <br><br>
+
+  <table mat-table [dataSource]="predictions" matSort>
+    <ng-container matColumnDef="customerName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Customer Name</th>
+      <td mat-cell *matCellDef="let row">{{ row.customerName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastOrderDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Order Date</th>
+      <td mat-cell *matCellDef="let row">{{ row.lastOrderDate | date }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nextPredictedOrder">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Next Predicted Order</th>
+      <td mat-cell *matCellDef="let row">{{ row.nextPredictedOrder | date }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-raised-button color="primary" (click)="openOrdersModal(row)">VIEW ORDERS</button>
+        <button mat-raised-button color="accent" (click)="openNewOrderModal(row)">NEW ORDER</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5,10, 20]" showFirstLastButtons></mat-paginator>
+</div>

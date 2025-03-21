@@ -1,8 +1,6 @@
-import { RenderMode, ServerRoute } from '@angular/ssr';
+import { Routes } from '@angular/router';
+import { SalesDatePredictionViewComponent } from './sales-date-prediction-view/sales-date-prediction-view.component';
 
-export const serverRoutes: ServerRoute[] = [
-  {
-    path: '**',
-    renderMode: RenderMode.Prerender
-  }
+export const serverRoutes: Routes = [
+  { path: '', component: SalesDatePredictionViewComponent }
 ];

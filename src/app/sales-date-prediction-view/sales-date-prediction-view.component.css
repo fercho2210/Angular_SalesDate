@@ -1,0 +1,45 @@
+.customers-title {
+    font-weight: bold;
+    margin-left: 30px; /* Ajusta el margen izquierdo para moverlo a la derecha */
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente (1.2em = 120% del tamaño predeterminado) */
+  }
+
+  .right-align {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .search-field-wide {
+    width: 900px; /* Ajusta el ancho según sea necesario */
+  }
+
+  .title-container {
+    background-color: black;
+    color: white;
+    padding: 10px; /* Ajusta el relleno según sea necesario */
+    text-align: center; /* Alinea el texto al centro */
+    width: 100%; /* Asegura que el contenedor abarque todo el ancho */
+    box-sizing: border-box; /* Incluye el relleno en el ancho total */
+  }
+
+  .content-box {
+    border: 1px solid #ccc; /* Agrega un borde al cuadro */
+    padding: 20px; /* Agrega relleno al cuadro */
+    border-radius: 5px; /* Agrega bordes redondeados (opcional) */
+    margin: 10px; /* Agrega margen externo al cuadro (opcional) */
+  }
+  
+  .right-align {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .customers-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+  .search-field-wide {
+    width: 300px;
+  }
